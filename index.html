@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programación | 4to y 5to Perito Contador</title>
+  <style>
+    :root {
+      --color1: #2F4156;
+      --color2: #567C8D;
+      --color3: #C8D9E6;
+      --color4: #F5EFEB;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--color1);
+      color: var(--color4);
+      overflow-x: hidden;
+    }
+
+    canvas#particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(rgba(47,65,86,0.8), rgba(86,124,141,0.8)), url('imagenes/fondo-codigo.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--color4);
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.8em;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .subtitulo {
+      font-style: italic;
+      font-size: 1.2em;
+      color: var(--color3);
+    }
+
+    #typewriter {
+      font-family: 'Courier New', monospace;
+      font-size: 1.1em;
+      color: var(--color3);
+      margin-top: 10px;
+      white-space: pre;
+      min-height: 1.5em;
+    }
+
+    .contenido-imagen {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contenido-imagen img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      border-left: 6px solid var(--color3);
+      padding-left: 10px;
+      color: var(--color3);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "\1F4BB ";
+      color: var(--color4);
+    }
+
+    .video-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .video-item {
+      flex: 1 1 300px;
+      max-width: 400px;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .video-item iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border: none;
+    }
+
+    .video-item.destacado {
+      flex: 1 1 100%;
+      max-width: 800px;
+      aspect-ratio: 16 / 9;
+      margin: 0 auto 30px;
+    }
+
+    .frase {
+      font-size: 1.5em;
+      text-align: center;
+      font-style: italic;
+      color: var(--color3);
+      margin-top: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--color1);
+      color: var(--color4);
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      section {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .contenido-imagen {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <h1>💻 Programación</h1>
+    <p class="subtitulo">Innovar, automatizar y transformar desde el código</p>
+    <p id="typewriter"></p>
+  </header>
+
+  <section>
+    <h2>🎯 Objetivos del Curso</h2>
+    <div class="contenido-imagen">
+      <ul>
+        <li>Desarrollar pensamiento lógico y algorítmico.</li>
+        <li>Comprender la programación estructurada y orientada a objetos.</li>
+        <li>Codificar soluciones reales usando lenguajes modernos.</li>
+        <li>Documentar y aplicar buenas prácticas en el software.</li>
+      </ul>
+      <img src="img1.png" alt="Objetivos de programación">
+    </div>
+  </section>
+
+  <section>
+    <h2>📘 Contenidos Principales</h2>
+    <div class="contenido-imagen">
+      <ul>
+        <li>Lenguajes: Python, JavaScript, HTML, CSS.</li>
+        <li>Estructuras: variables, condicionales, ciclos, funciones.</li>
+        <li>Programación orientada a objetos y estructuras de datos.</li>
+        <li>Interfaz gráfica, desarrollo web y bases de datos.</li>
+      </ul>
+      <img src="img2.png" alt="Contenidos de programación">
+    </div>
+  </section>
+
+  <section>
+    <h2>🛠️ Aplicaciones Prácticas</h2>
+    <div class="contenido-imagen">
+      <ul>
+        <li>Sistemas para empresas contables y administrativas.</li>
+        <li>Automatización de tareas con scripts y macros.</li>
+        <li>Creación de apps web y móviles.</li>
+        <li>Control de inventarios, facturación, CRM.</li>
+      </ul>
+      <img src="img3.png" alt="Aplicaciones prácticas de programación">
+    </div>
+  </section>
+
+<section class="videos-multiples">
+  <h2>📺 Video Destacado: Diagrama de Flujo</h2>
+  <div class="video-grid">
+    <div class="video-item destacado">
+      <iframe src="https://www.youtube.com/embed/pWVFKfTUeYQ" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="videos-multiples">
+  <h2>📺 Más videos de Programación</h2>
+  <div class="video-grid">
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/3ZYyQpQTdDg" allowfullscreen></iframe>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/f10jKIslSUY" allowfullscreen></iframe>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/pWw4UtQhdek" allowfullscreen></iframe>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/9Q2JDISDUe8" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+  
+  <section class="frase">
+    “Programar no es solo escribir código, es resolver problemas y crear oportunidades.”
+  </section>
+
+  <footer>
+    &copy; 2025, Beberly Gabriela de Lima Leal Sosa - 6to. Perito Contador, Todos sus derechos reservados para usos educativos.
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particlesArray;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    });
+
+    class Particle {
+      constructor(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedY = Math.random() * 1 + 0.5;
+        this.char = String.fromCharCode(33 + Math.floor(Math.random() * 94));
+      }
+      update(){
+        this.y += this.speedY;
+        if(this.y > canvas.height){
+          this.y = 0;
+          this.x = Math.random() * canvas.width;
+        }
+      }
+      draw(){
+        ctx.fillStyle = 'rgba(200,217,230,0.6)';
+        ctx.font = `${this.size * 10}px monospace`;
+        ctx.fillText(this.char, this.x, this.y);
+      }
+    }
+
+    function init(){
+      particlesArray = [];
+      for(let i = 0; i < 150; i++){
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let i = 0; i < particlesArray.length; i++){
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    const texto = "> Cargando entorno de desarrollo...\n> Preparando consola de estudiante...\n> ¡Bienvenida a tu viaje de programación!";
+    let i = 0;
+    const velocidad = 60;
+    const sonido = new Audio('https://cdn.pixabay.com/audio/2025/05/01/audio_555697663f.mp3');
+
+    function escribir() {
+      if (i < texto.length) {
+        const char = texto.charAt(i);
+        document.getElementById("typewriter").innerHTML += char;
+        if (char !== '\n' && char !== ' ') sonido.play();
+        i++;
+        setTimeout(escribir, velocidad);
+      } else {
+        setTimeout(() => {
+          document.getElementById("typewriter").innerHTML = "";
+          i = 0;
+          escribir();
+        }, 2000);
+      }
+    }
+
+    escribir();
+  </script>
+</body>
+</html>
